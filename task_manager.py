@@ -8,7 +8,6 @@ def get_database() -> Database:
     return client['task_manager']
 
 
-
 def add_task(task: Dict[str, Any]) -> str:
     db = get_database()
     collection = db['tasks']
