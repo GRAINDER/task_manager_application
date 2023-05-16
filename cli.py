@@ -1,5 +1,5 @@
 from task_manager import add_task, view_all_tasks, update_task_status, delete_task
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 def display_tasks(tasks: List[Dict[str, Any]]) -> None:
     print("TASKS:")
@@ -32,6 +32,7 @@ def delete_task_cli() -> None:
     count = delete_task(task_id)
     print(f"{count} task(s) deleted")
 
+
 def display_menu() -> None:
     print("TASK MANAGER MENU")
     print("1. Add Task")
@@ -47,6 +48,19 @@ def main() -> None:
         
         if choice == '1':
             add_task_cli()
+
+        if choice == '2':
+            view_all_tasks_cli()
+
+        if choice == '3':
+            update_task_status_cli()
+
+        if choice == '4':
+            delete_task_cli()
+    
+        if choice == '5':
+            break
+    
        
 if __name__ == '__main__':
     main()
